@@ -1,0 +1,13 @@
+apiVersion: consul.hashicorp.com/v1alpha1
+kind: ServiceIntentions
+metadata:
+  name: counting-allow-sameness
+  namespace: default
+spec:
+  destination:
+    name: counting
+  sources:
+    - name: dashboard
+      namespace: default
+      samenessGroup: sameness-group-a 
+      action: allow

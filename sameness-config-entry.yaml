@@ -1,0 +1,14 @@
+apiVersion: consul.hashicorp.com/v1alpha1
+kind: SamenessGroup
+metadata:
+  name: sameness-group-a 
+spec:
+  defaultForFailover: true
+  members:
+    # This is lazy but it tests that sameness groups ignore missing members.
+    - partition: default
+    - partition: ap1
+    - peer: dc1
+    - peer: dc2
+#    - peer: cluster-02-a
+#   - peer: cluster-03-a
