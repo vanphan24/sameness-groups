@@ -205,7 +205,35 @@ Note: The UI on Consul version 1.14 does not yet recognize peers for Intention c
 kubectl apply -f intentions-sameness.yaml --context $dc2
 ```
 
+18. Apply the proxy-defaults on both datacenters to ensure data plane traffic between dc1 and dc2 clusters goes via local mesh gateways 
+```
+kubectl apply -f proxydefault.yaml --context $dc1
+kubectl apply -f proxydefault.yaml --context $dc2
+```
 
 
+# Failover counting service
+
+19. Delete the counting service on the dc1 cluster.
+
+```
+kubectl delete -f countingapp/counting.yaml --context $dc1
+```
+
+20. Observe the dashboard service on your browser. You should notice that the counter has restarted since the dashboard is connecting to different counting service instance.
+
+![alt text](https://github.com/vanphan24/cluster-peering-failover-demo/blob/main/images/dashboard-failover.png)
+
+**This is your current configuration:**  
+![alt text](https://github.com/vanphan24/cluster-peering-failover-demo/blob/main/images/Screen%20Shot%202022-09-13%20at%205.13.46%20PM.png "Cluster Peering Demo")
+
+
+21. Bring counting service on dc1 back up.
+```
+kubectl apply -f counting.yaml --context $dc1
+```
+
+
+22. Observe the dashboard service on your browser. Notice the the dashboard URL shows the counter has restarted again since it automatically fails back to the original service on dc1.
 
 
