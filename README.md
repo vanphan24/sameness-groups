@@ -36,10 +36,10 @@ You can request a 30 day trial license here: https://www.hashicorp.com/products/
 git clone https://github.com/vanphan24/sameness-groups.git
 ```
 
-2. Nagivate to the **sameness-groups/countingapp** folder. 
+2. Nagivate to the **sameness-groups** folder. 
 
 ```
-cd sameness-groups/countingapp
+cd sameness-groups
 ```
 
 3. Set environemetal variables for kubernetes cluster dc1 and dc2
