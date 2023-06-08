@@ -230,7 +230,7 @@ kubectl delete -f countingapp/counting.yaml --context $dc1
 
 21. Bring counting service on dc1 back up.
 ```
-kubectl apply -f counting.yaml --context $dc1
+kubectl apply -f countingapp/counting.yaml --context $dc1
 ```
 
 
