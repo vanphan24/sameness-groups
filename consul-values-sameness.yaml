@@ -9,12 +9,12 @@ global:
     secretName: license
     secretKey: key
 
-  adminPartitions:
-    enabled: true
-    name: "default"
+#  adminPartitions:
+#    enabled: true
+#    name: "default"
     # name above is the partition name for servers to reside 	
-    service:
-      annotations: null
+#    service:
+#      annotations: null
 
   enableConsulNamespaces:
     enabled: true
