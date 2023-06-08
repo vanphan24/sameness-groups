@@ -154,7 +154,7 @@ helm upgrade $dc2 hashicorp/consul --values consul-values-sameness.yaml
 12. Deploy counting service on dc2. This will be the failover service instance.
 
 ```
-kubectl apply -f counintapp/counting.yaml --context $dc2
+kubectl apply -f countingapp/counting.yaml --context $dc2
 ```
 
 
