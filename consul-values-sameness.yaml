@@ -1,5 +1,5 @@
 global:
-#  image: "hashicorp/consul-enterprise:1.15.0-ent"
+#  image: "hashicorp/consul-enterprise:1.16.0-ent"
   image: "hashicorppreview/consul-enterprise:1.16-dev"
   imageK8S: "hashicorppreview/consul-k8s-control-plane:1.2.0-dev"
   peering:
