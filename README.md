@@ -74,7 +74,7 @@ helm install $dc1 hashicorp/consul --values consul-values-sameness.yaml --set gl
 
 or if pointing to pre-reelase K8s chart that is locally clone Consul-k8s repo:
 ```
-helm install $dc1 consul-k8s/charts/consul --values consul-values-sameness.yaml --set global.datacenter=dc1                         
+helm install $dc1 ../consul-k8s/charts/consul --values consul-values-sameness.yaml --set global.datacenter=dc1                         
 ```
 
 7. Confirm Consul deployed sucessfully
@@ -141,7 +141,7 @@ helm install $dc2 hashicorp/consul --values consul-values-sameness.yaml --set gl
 
 or if pointing to pre-reelase K8s chart that is locally clone Consul-k8s repo:
 ```
-helm install $dc2 consul-k8s/charts/consul --values consul-values-sameness.yaml --set global.datacenter=dc2                         
+helm install $dc2 ../consul-k8s/charts/consul --values consul-values-sameness.yaml --set global.datacenter=dc2                         
 ```
 
 Note: Run ```kubectl get crd``` and make sure that exportedservices.consul.hashicorp.com exist.    
