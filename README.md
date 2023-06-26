@@ -18,13 +18,7 @@ or
 ```
 helm repo update hashicorp
 ```
-Note:
- 
-For pre-release beta builds of Consul on Kubernetes images, clone the consul-k8s repo.
 
-```
-git clone https://github.com/hashicorp/consul-k8s.git
-```
 3. You will need a Consul Enterprise license. 
 
 You can request a 30 day trial license here: https://www.hashicorp.com/products/consul/trial
@@ -69,12 +63,7 @@ kubectl config use-context $dc1
 ``` 
 
 ```
-helm install $dc1 hashicorp/consul --values consul-values-sameness.yaml --set global.datacenter=dc1     
-```
-
-or if pointing to pre-reelase K8s chart that is locally clone Consul-k8s repo:
-```
-helm install $dc1 ../consul-k8s/charts/consul --values consul-values-sameness.yaml --set global.datacenter=dc1                         
+helm install $dc1 hashicorp/consul --values consul-values-sameness.yaml --set global.datacenter=dc1 --version 1.2.0-rc1    
 ```
 
 7. Confirm Consul deployed sucessfully
@@ -91,7 +80,7 @@ Note: Run ```kubectl get crd``` and make sure that exportedservices.consul.hashi
 If not, you need to upgrade your helm deployment:  
     
 ```
-helm upgrade $dc1 hashicorp/consul --values consul-values-sameness.yaml  
+helm upgrade $dc1 hashicorp/consul --values consul-values-sameness.yaml --version 1.2.0-rc1
 ```
 
 8. Deploy both dashboard and counting service on dc1
@@ -136,19 +125,14 @@ kubectl create secret generic license --from-literal=key=$CONSUL_LICENSE --conte
 kubectl config use-context $dc2
 ```
 ```
-helm install $dc2 hashicorp/consul --values consul-values-sameness.yaml --set global.datacenter=dc2     
-```
-
-or if pointing to pre-reelase K8s chart that is locally clone Consul-k8s repo:
-```
-helm install $dc2 ../consul-k8s/charts/consul --values consul-values-sameness.yaml --set global.datacenter=dc2                         
+helm install $dc2 hashicorp/consul --values consul-values-sameness.yaml --set global.datacenter=dc2 --version 1.2.0-rc1
 ```
 
 Note: Run ```kubectl get crd``` and make sure that exportedservices.consul.hashicorp.com exist.    
 If not, you need to upgrade your helm deployment:  
 
 ```
-helm upgrade $dc2 hashicorp/consul --values consul-values-sameness.yaml    
+helm upgrade $dc2 hashicorp/consul --values consul-values-sameness.yaml --version 1.2.0-rc1 
 ```
 
 12. Deploy counting service on dc2. This will be the failover service instance.
