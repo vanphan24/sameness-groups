@@ -1,7 +1,7 @@
 global:
-#  image: "hashicorp/consul-enterprise:1.16.0-ent"
-  image: "hashicorppreview/consul-enterprise:1.16-dev"
-  imageK8S: "hashicorppreview/consul-k8s-control-plane:1.2.0-dev"
+  image: "hashicorp/consul-enterprise:1.16.0-rc1-ent"
+#  image: "hashicorppreview/consul-enterprise:1.16-dev"
+#  imageK8S: "hashicorp/consul-k8s-control-plane:1.2.0-rc1"
   peering:
     enabled: true
 
@@ -16,8 +16,7 @@ global:
 #    service:
 #      annotations: null
 
-  enableConsulNamespaces:
-    enabled: true
+  enableConsulNamespaces: true
 
   tls:
     enabled: true
