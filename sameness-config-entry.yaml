@@ -10,3 +10,5 @@ spec:
     - partition: ap1
     - peer: dc1
     - peer: dc2
+#    - peer: cluster-02-a
+#   - peer: cluster-03-a
