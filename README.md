@@ -71,10 +71,10 @@ helm install $dc1 hashicorp/consul --values consul-values-sameness.yaml --set gl
 ```
 kubectl get pods --context $dc1
 NAME                                               READY      STATUS       RESTARTS   AGE
-consul-consul-connect-injector-5978975f65-wb6cz       1/1     Running   0             25h
-consul-consul-mesh-gateway-f647c58fb-hp65d            1/1     Running   0             25h
-consul-consul-server-0                                1/1     Running   1 (24h ago)   25h
-consul-consul-webhook-cert-manager-84ffb678cc-rmvkc   1/1     Running   0             25h
+consul-consul-connect-injector-5978975f65-wb6cz       1/1     Running   0             3m
+consul-consul-mesh-gateway-f647c58fb-hp65d            1/1     Running   0             3m
+consul-consul-server-0                                1/1     Running   1 (3m ago)    3m
+consul-consul-webhook-cert-manager-84ffb678cc-rmvkc   1/1     Running   0             3m
 ```  
 Note: Run ```kubectl get crd``` and make sure that exportedservices.consul.hashicorp.com exist.    
 If not, you need to upgrade your helm deployment:  
