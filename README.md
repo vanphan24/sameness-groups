@@ -220,4 +220,27 @@ kubectl apply -f countingapp/counting.yaml --context $dc1
 
 22. Observe the dashboard service on your browser. Notice the the dashboard URL shows the counter has restarted again since it automatically fails back to the original service on dc1.
 
+# Delete and Clean up
 
+23. Delete services on dc2
+
+```
+kubectl delete -f ../sameness-groups --context $dc2
+kubectl delete -f counting --context $dc2
+```
+
+```
+kubectl delete -f ../sameness-groups --context $dc1
+kubectl delete -f countingapp --context $dc1
+```
+
+24. Delete Consul deployment (You need to download consul-k8s cli to perform this: https://developer.hashicorp.com/consul/docs/k8s/installation/install-cli)
+
+```
+kubectl config use-context $dc2
+consul-k8s uninstall -auto-approve -wipe-data
+```
+```
+kubectl config use-context $dc1
+consul-k8s uninstall -auto-approve -wipe-data
+```
