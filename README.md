@@ -226,7 +226,7 @@ kubectl apply -f countingapp/counting.yaml --context $dc1
 
 ```
 kubectl delete -f ../sameness-groups --context $dc2
-kubectl delete -f counting --context $dc2
+kubectl delete -f countingapp --context $dc2
 ```
 
 ```
