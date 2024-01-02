@@ -157,13 +157,13 @@ kubectl apply -f meshgw.yaml --context $dc2
 
   - Log onto Consul UI for dc1, navigate to the Peers side tab on the left hand side.
   - Click on **Add peer connection***
-  - Enter a name you want to represent the peer that you are connecting to. 
+  - Enter **dc2** as the name you want to represent the peer that you are connecting to. 
   - Click **Generate token**
   - Copy the newly created token.
   - Log onto Consul UI for dc2, navigate to the Peers side tab on the left hand side.
   - Click on **Add peer connection***
   - Click on **Establish peering**
-  - Enter a name you want to represent the peer that you are connecting to.
+  - Enter **dc1** as the name you want to represent the peer that you are connecting to.
   - Paste the token and click **Add peer**
   - Your peering connection should be established.
 
